@@ -36,7 +36,6 @@ public class CreateTicketWithMandarotyFields extends TestBase {
         createTicketForm.EnterAddress("Nasrcity");
         createTicketForm.ClickSubmitButton();
 
-        createTicketForm.TakeOverAction();
 
 
 
