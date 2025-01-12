@@ -17,6 +17,8 @@ public class Login {
     By Name = By.id("Username");
     By Password = By.id("Password");
     By LoginButton = By.xpath("//*[@id=\"loginForm\"]/table/tbody/tr[5]/td/input");
+    By SubmitTicketAsGuest = By.xpath("//button[@class='submit_new_ticket']");
+
 
     //Actions
     public void navigateToWebsite(String url){
@@ -27,6 +29,22 @@ public class Login {
         browserActions.type(Name , "admin");
         browserActions.type(Password , "admin@C1");
        browserActions.click(LoginButton);
+    }
+    public void EnterName(String st){
+        browserActions.type(Name , st);
+
+    }
+    public void EnterPass(String pass){
+        browserActions.type(Name , pass);
+
+    }
+    public void ClickLogin(){
+        browserActions.click(LoginButton);
+    }
+
+
+    public void ClickSubmitTicketAsGuest (){
+        browserActions.click(SubmitTicketAsGuest);
     }
 
 }

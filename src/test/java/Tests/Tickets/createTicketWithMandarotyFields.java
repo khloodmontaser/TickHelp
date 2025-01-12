@@ -1,4 +1,4 @@
-package Tests.TC1_CreateTicket;
+package Tests.Tickets;
 
 import Pages.LoginPage.Login;
 import Pages.NavBar.NavBar;
@@ -8,7 +8,8 @@ import Config.Config;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class CreateTicketWithMandarotyFields extends TestBase {
+/*Admin user create a ticket with the  mandatory fields only*/
+public class createTicketWithMandarotyFields extends TestBase {
     String url = Config.getProperty("URL");
     Login login;
     NavBar navBar;
@@ -25,18 +26,19 @@ public class CreateTicketWithMandarotyFields extends TestBase {
     }
 
     @Test
-    public void Create_Ticket() {
+    public void Create_Ticket()  {
         navigateToUrl();
         login.ValidLogin();
         navBar.ClickNewTicket();
+        createTicketForm.EnterSubject("bySelenuim");
 
+        createTicketForm.ClickCatrgory();
         createTicketForm.SelectCategory();
-        createTicketForm.EnterSubject();
-        createTicketForm.EnterDetails("detaillls");
+
+        createTicketForm.EnterDetails("Detaillls aa detaillls");
         createTicketForm.EnterAddress("Nasrcity");
+
         createTicketForm.ClickSubmitButton();
-
-
 
 
     }

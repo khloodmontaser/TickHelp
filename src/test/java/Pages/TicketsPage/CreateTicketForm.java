@@ -17,28 +17,45 @@ public class CreateTicketForm {
     By CategoryField = By.xpath("//*[@id=\"CategoryRow\"]/td[1]/div/a/i");
     By CategorySelection = By.xpath("//li[@class='dropdown-item']//span[@class='dropdown-text' and text()='Anderson']\n");
     By subject = By.id("Subject");
-    By TextDetails = By.id("rteBody");
+    By TextDetails = By.xpath("//*[@id='rteBody']");
     By Address = By.id("CustomFieldValue28");
+    By advancedButton =By.id("lnkAdvanced");
+    By tagField= By.id("Tags_tag");
     By SubmitButton = By.id("btnAdd");
-    By TakeOverButton = By.xpath("//*[@id=\"status\"]/li[2]/form/input");
-    public void TakeOverAction(){
+    By TakeOverButton = By.id("CategoryID-error");
+    By GuestEmail = By.id("YourEmail");
+
+
+    public void validatemsg(){
         assertion.assertElementIsDisplayed(TakeOverButton);
     }
-    public void SelectCategory(){
+    public void ClickCatrgory(){
         browserActions.click(CategoryField);
+
+    }
+    public void SelectCategory(){
         browserActions.click(CategorySelection);
     }
-    public void EnterSubject(){
-        browserActions.type(subject, "sub");
+    public void EnterSubject(String sub ){
+        browserActions.type(subject, sub);
     }
     public void EnterDetails(String details){
+        browserActions.click(TextDetails);
         browserActions.type(TextDetails, details);
     }
     public void EnterAddress(String address){
         browserActions.type(Address,  address);
     }
+    public void ClickAdvancedButton(){browserActions.click(advancedButton);}
     public void ClickSubmitButton(){
+
         browserActions.click(SubmitButton);
+    }
+    public void EnterTag(){
+        browserActions.type(tagField, "AutomatedTag");
+    }
+    public void EnterGuestMail(String GuestMail){
+        browserActions.type(GuestEmail,GuestMail );
     }
 
 }

@@ -13,12 +13,15 @@ public class NavBar {
         assertion = new Assertion(driver);
     }
 
-
     //Locators
     By NewTicketButton = By.xpath("//*[@id=\"newTicket\"]/a");
+    By Tickets = By.xpath("//*[@id=\"divBigHeader\"]/ul[1]/li[2]/a");
 
     //Actions
     public void ClickNewTicket(){
         browserActions.click(NewTicketButton);
+    }
+    public void NavigateToTickets(){
+        browserActions.click(Tickets);
     }
 }

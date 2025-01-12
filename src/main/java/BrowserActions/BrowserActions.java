@@ -48,7 +48,7 @@ public class BrowserActions {
     public void type(By locator, String text) {
         WebElement element = waitUntilElementIsReady(locator);
         element.click();
-        //element.clear();
+        element.clear();
         element.sendKeys(text);
     }
 
